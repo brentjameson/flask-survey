@@ -1,21 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>questions</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
     <p>
         <form action="/answer" method="POST"
             <label for="{{question_num}}">{{questions.question}}</label>
-            <input type="radio" name="{{question_num}}" value="yes"> Yes </input>
-            <input type="radio" name="{{question_num}}" value="no"> No </input>
+            <br>
+            <input type="radio" name="{{question_num}}" value= {{questions.choices[0]}}> {{questions.choices[0]}}</input>
+            <br>
+            <input type="radio" name="{{question_num}}" value={{questions.choices[1]}}> {{questions.choices[1]}} </input>
+            <br>
             <button>Submit</button>
         </form>
     </p>
-</body>
-</html>
+    {% endblock %}
 
             
